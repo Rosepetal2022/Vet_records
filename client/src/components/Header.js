@@ -8,20 +8,20 @@ import {
 
 
 const Header = () => {
-  return (
-    <Nav vertical>
-  <NavItem>
-    <NavLink href="/Profile">
-      My Profile
-    </NavLink>
-  </NavItem>
-  <NavItem>
-    <NavLink href="/Animal">
-      My Pets
-    </NavLink>
-  </NavItem>
-</Nav>
-  );
+    return (
+        <Nav className="main-header" vertical>
+             <NavItem>
+                <NavLink href="/Profile" id="header-link">
+                    My Profile
+                </NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="/Animal" id="header-link">
+                    My Pets
+                </NavLink>
+            </NavItem>
+        </Nav>
+    );
 };
 
 export default Header;

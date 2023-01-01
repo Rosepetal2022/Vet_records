@@ -33,12 +33,15 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Header />
+        <div id="main-title" className="font">
+          Vet Record
+        </div>
         <Routes>
           <Route path="/Animal" element={<Animal />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/" element={<Home />} />
         </Routes>
-        <Footer />
+       <Footer />
       </Router>
 
 
