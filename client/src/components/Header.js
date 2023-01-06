@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <Nav className="main-header" vertical>
 
-            {Auth.loggedIn() ? (
+         {Auth.loggedIn() ? (
             <>
              <NavItem>
                 <NavLink href="/Profile" id="header-link">
@@ -28,11 +28,12 @@ const Header = () => {
             </NavItem>
             </>
             ) : (
-                <>
-                <Login />
-                <SignUp />
-                </>
+            <>
+            <Login />
+            <SignUp />
+            </>
             )}
+            
         </Nav>
     );
 };

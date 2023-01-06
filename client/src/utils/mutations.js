@@ -8,7 +8,8 @@ mutation login($username: String!, $password: String!) {
         _id
         username
       }
-    }`;
+    }
+  }`;
 
     export const ADD_USER = gql`
     mutation addUser($username: String!, $password: String!) {
