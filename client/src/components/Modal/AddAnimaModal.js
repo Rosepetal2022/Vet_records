@@ -1,17 +1,64 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_ANIMAL } from '../../utils/mutations';
 import {
     Button,
     Modal,
     ModalHeader,
     ModalBody,
     ModalFooter,
+    Form,
+    Label,
+    Input,
+    FormGroup,
 } from 'reactstrap';
 
 
 function AddAnimalModal(props) {
-    const { className } = props;
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+
+    const [formState, setFormState] = useState({
+        petname: '',
+        age: '',
+        breed: '',
+        animaltype: '',
+        weight: '',
+    });
+
+    const [addAnimal, { error }] = useMutation(ADD_ANIMAL);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+        console.log(name, value);
+
+    };
+
+    const handleFormSubmit = async (event) => {
+        try {
+            await addAnimal({
+                variables: { ...formState },
+            });
+
+        } catch (error) {
+            console.log(error)
+        }
+
+        //clear the form state
+        setFormState({
+            petname: '',
+            age: '',
+            breed: '',
+            animaltype: '',
+            weight: '',
+        });
+    };
+
     return (
         <div>
             <Button color="danger" onClick={toggle}>
@@ -20,23 +67,88 @@ function AddAnimalModal(props) {
             <Modal
                 isOpen={modal}
                 toggle={toggle}
-                className={className}
 
             >
                 <ModalHeader toggle={toggle}>Modal title</ModalHeader>
                 <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    <Form onSubmit={handleFormSubmit}>
+                        <FormGroup>
+                            <Label className="font" for="petname">
+                                Pet Name
+                            </Label>
+                            <Input
+                                id="petname"
+                                className="font"
+                                name="petname"
+                                placeholder="Add Your Pet's Name Here"
+                                type="text"
+                                value={formState.petname}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="age">
+                                Pet's Age
+                            </Label>
+                            <Input
+                                id="age"
+                                className="font"
+                                name="age"
+                                placeholder="Add Your Pet's Age Here"
+                                type="text"
+                                value={formState.age}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="breed">
+                                Pet's Breed
+                            </Label>
+                            <Input
+                                id="breed"
+                                className="font"
+                                name="breed"
+                                placeholder="Add Your Pet's Breed Here"
+                                type="text"
+                                value={formState.breed}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="animaltype">
+                                Pet's Type
+                            </Label>
+                            <Input
+                                id="animaltype"
+                                className="font"
+                                name="animaltype"
+                                placeholder="Add Your Pet's Type Here"
+                                type="text"
+                                value={formState.animaltype}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="weight">
+                                Pet's Weight
+                            </Label>
+                            <Input
+                                id="weight"
+                                className="font"
+                                name="weight"
+                                placeholder="Add Your Pet's Weight Here"
+                                type="text"
+                                value={formState.weight}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <Button color="primary" onClick={toggle} className="submit-button" type="submit" value="submit">
+                        Add Pet
+                    </Button>
+                    </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={toggle}>
-                        Do Something
-                    </Button>{' '}
+                    
                     <Button color="secondary" onClick={toggle}>
                         Cancel
                     </Button>
