@@ -20,7 +20,7 @@ function Login(props) {
   const toggle = () => setModal(!modal);
 
   const [formState, setFormState] = useState({ username: '', password: '' });
-  const [login] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN);
 
   //update state based on from input changes
   const handleChange = (event) => {
@@ -32,7 +32,7 @@ function Login(props) {
     });
   };
 
-  const handleFromSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
@@ -65,13 +65,13 @@ function Login(props) {
   );
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button id="login-btn-header" onClick={toggle}>
         Login
       </Button>
       <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>
         <ModalHeader>Login</ModalHeader>
         <ModalBody>
-          <Form onSubmit={handleFromSubmit}>
+          <Form onSubmit={handleFormSubmit}>
             <Row className="row-cols-lg-auto g-3 align-items-center">
               <Col>
                 <Label
@@ -107,16 +107,17 @@ function Login(props) {
                 />
               </Col>
             </Row>
-          </Form>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle} value="submit" type="submit">
+            <ModalFooter>
+          <Button className="login-btn" onClick={toggle} value="submit" type="submit">
             Login
           </Button>{' '}
           <Button color="secondary" onClick={toggle}>
             Cancel
           </Button>
         </ModalFooter>
+          </Form>
+        </ModalBody>
+        
       </Modal>
     </div>
   );

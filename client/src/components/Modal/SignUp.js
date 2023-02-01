@@ -69,7 +69,7 @@ function SignUp(props) {
   );
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button id="sign-up-btn-header" onClick={toggle}>
         Sign Up 
       </Button>
       <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>

@@ -11,6 +11,12 @@ import {
 
 
 const Header = () => {
+    // logs user out
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
     return (
         <Nav className="main-header" vertical>
 
@@ -26,11 +32,11 @@ const Header = () => {
                     My Pets
                 </NavLink>
             </NavItem>
+            <NavLink href="/" className="nav-link" onClick={logout}>Logout</NavLink>
             </>
             ) : (
             <>
-            <Login />
-            <SignUp />
+           
             </>
             )}
             

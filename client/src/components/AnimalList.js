@@ -1,3 +1,4 @@
+
 import React from 'react';
 //import { useMutation } from '@apollo/client';
 //import Auth from '../../utils/auth';
@@ -12,45 +13,17 @@ import {
 } from 'reactstrap';
 
 
-const AnimalList = ({ animals, animal }) => {
-    if (!animal.length) {
-        return <h2>No Pets Yet!</h2>
+const AnimalList = ({ animal, title }) => {
+    if(!animal) {
+        console.log(animal);
+        return <h1>No Pets yet!</h1>
     }
 
     return (
-        <div>
-            {animal && animal?.map(animal => (
-            <Card
-                key={animal._id}
-                style={{
-                    width: '18rem'
-                }}
-            >
-                <img
-                    alt="Sample"
-                    src="https://picsum.photos/300/200"
-                />
-                <CardBody>
-                    <CardTitle tag="h5">
-                        {animal.petname}
-                    </CardTitle>
-                    <CardSubtitle
-                        className="mb-2 text-muted"
-                        tag="h6"
-                    >
-                        Card subtitle
-                    </CardSubtitle>
-                    <CardText>
-                        Some quick example text to build on the card title and make up the bulk of the card‘s content.
-                    </CardText>
-                    <Button>
-                        Button
-                    </Button>
-                </CardBody>
-            </Card>
-            ))};
-        </div>
+        <>
+    
+        </>
     );
-};
+    };
 
 export default AnimalList;
