@@ -66,10 +66,10 @@ function Login(props) {
   return (
     <div>
       <Button color="danger" onClick={toggle}>
-        Click Me
+        Login
       </Button>
       <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>
-        <ModalHeader>Modal title</ModalHeader>
+        <ModalHeader>Login</ModalHeader>
         <ModalBody>
           <Form onSubmit={handleFromSubmit}>
             <Row className="row-cols-lg-auto g-3 align-items-center">

@@ -13,13 +13,13 @@ import {
 
 
 const AnimalList = ({ animals, animal }) => {
-    if (!animals) {
+    if (!animal.length) {
         return <h2>No Pets Yet!</h2>
     }
 
     return (
         <div>
-
+            {animal && animal?.map(animal => (
             <Card
                 key={animal._id}
                 style={{
@@ -48,6 +48,7 @@ const AnimalList = ({ animals, animal }) => {
                     </Button>
                 </CardBody>
             </Card>
+            ))};
         </div>
     );
 };

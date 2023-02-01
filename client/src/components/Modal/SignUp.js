@@ -70,17 +70,17 @@ function SignUp(props) {
   return (
     <div>
       <Button color="danger" onClick={toggle}>
-        Click Me
+        Sign Up 
       </Button>
       <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>
-        <ModalHeader>Modal title</ModalHeader>
+        <ModalHeader>Sign Up</ModalHeader>
         <ModalBody>
           <Form onSubmit={handleFormSubmit}>
 
             <Col>
               <div>
                 <Input
-                  id="signUp-username"
+                  id="signUp-username"cd 
                   className="font"
                   placeholder="username"
                   name="username"
@@ -123,7 +123,7 @@ function SignUp(props) {
             />
 
             <Button color="primary" onClick={toggle} value="submit" type="submit">
-              Login
+              Sign Up
             </Button>{' '}
             <Button color="secondary" onClick={toggle}>
               Cancel
