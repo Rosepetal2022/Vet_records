@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import { Navigate } from 'react-router-dom';
 import {
   Button,
   Modal,
@@ -51,6 +52,10 @@ function Login(props) {
       username: '',
       password: ''
     });
+    const loggedIn = Auth.loggedIn();
+    if(loggedIn) {
+      <Navigate to="/Profile" />
+    }
   }
 
   const externalCloseBtn = (

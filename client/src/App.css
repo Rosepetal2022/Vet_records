@@ -106,7 +106,8 @@ body {
 
 #header-link {
   text-decoration: none;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
+  font-size: 2rem; 
 }
 
 #main-title {
@@ -131,6 +132,17 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.loggedin-header {
+  height: 70vh;
+  background-image: linear-gradient(to right,  rgba(78, 80, 78, 0.801), 
+  rgba(58, 91, 158, 0.801)),
+  url(./images/loggedin_home.jpg);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  color: #fff;
 }
 
 .home-text-box {

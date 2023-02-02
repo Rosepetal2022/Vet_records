@@ -32,7 +32,7 @@ const Header = () => {
                     My Pets
                 </NavLink>
             </NavItem>
-            <NavLink href="/" className="nav-link" onClick={logout}>Logout</NavLink>
+            <NavLink href="/" id="header-link" onClick={logout}>Logout</NavLink>
             </>
             ) : (
             <>
