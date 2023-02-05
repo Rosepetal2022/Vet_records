@@ -24,7 +24,10 @@ const Animal = () => {
         This should only show up if I am logged in
       </div>
         <div className={`${loggedIn && ''}`}>
-            
+                    <AnimalList
+                        animal={me.animal}
+                        title="Pet Name"
+                    />
         </div>
     
     </main>
