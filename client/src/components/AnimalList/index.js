@@ -1,4 +1,3 @@
-
 import React from 'react';
 //import { useMutation } from '@apollo/client';
 //import Auth from '../utils/auth';
@@ -14,14 +13,15 @@ import {
 
 
 const AnimalList = ({ animal, title }) => {
-    if(!animal.length) {
-        console.log(animal);
+    /*if(!animal.length) {
         return <h1>No Pets yet!</h1>
-    }
+    }*/
 
     return (
         <>
+         
             <div>
+                My Pets
                 {animal && animal?.map(animal => (
                     <div>{animal.petname}</div>
                 ))}

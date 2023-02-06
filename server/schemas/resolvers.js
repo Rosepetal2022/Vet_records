@@ -16,6 +16,14 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
+
+        user: async(parent, { username }) => {
+            return await User.findOne({ username })
+            .select('-__v -password')
+            .populate('animal');
+        },
+
+
         // gets data of every user
         users: async () => {
             return await User.find()
