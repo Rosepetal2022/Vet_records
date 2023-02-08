@@ -12,14 +12,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Animal = () => {
   const { username: userParam } = useParams();
-  const { loading, data } = useQuery(QUERY_ANIMALS);
-  const {data: userData } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME);
   const loggedIn = Auth.loggedIn();
 
-  const animals = data?.animal || [];
-  //const me = data?.me || [];
-  
-  //console.log(me);
+  const me = data?.me || [];
+  console.log(me.animal, 'me in Animal');
 
 
 
@@ -35,10 +32,10 @@ const Animal = () => {
                     <Spinner color='primary'>Loading...</Spinner>
                 ) :
                (
-                  <AnimalList
-                      animals={animals}
-                      title="My Pets"
-                  />
+               <AnimalList
+                  me={me.animal} 
+                  title={"My Pets"} 
+               />
               )}
           </div>
       </main>
