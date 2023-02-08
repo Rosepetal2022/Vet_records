@@ -43,7 +43,7 @@ const AnimalList = ({ me, title }) => {
 
                                 <Link to={`/SingleAnimal/${me._id}`}>
             
-                                <Button>Go to Pet Profile</Button>
+                                <Button className="page-button page-button--card">Go to Pet Profile</Button>
                             
                             </Link>
                             </CardText>

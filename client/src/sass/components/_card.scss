@@ -1,6 +1,8 @@
 .card {
     text-align: center;
     margin: 2rem;
+    border-radius: 20rem;
+    overflow: hidden;
     box-shadow: 0 1rem 2rem rgba($color-black, .3);
 
     &__div {
