@@ -6,6 +6,7 @@ import './App.css';
 import Home from '../src/pages/Home';
 import Profile from '../src/pages/Profile';
 import Animal from '../src/pages/Animal';
+import SingleAnimal from '../src/pages/SingleAnimal';
 import Footer from '../src/components/Footer';
 import Header from '../src/components/Header';
 
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/Animal" element={<Animal />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/SingleAnimal" element={<SingleAnimal />} />
           <Route path="/" element={<Home />} />
         </Routes>
        <Footer />
