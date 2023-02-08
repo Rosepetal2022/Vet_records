@@ -1,11 +1,11 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_ME = gql `
-query Me {
+query me {
     me {
       _id
       username
-      animals {
+      animal {
         _id
         age
         animaltype
@@ -17,7 +17,8 @@ query Me {
     }
   }`;
 
-  export const QUERY_USERS = gql `query User {
+  export const QUERY_USERS = gql 
+  `query users {
     users {
       animal {
         age
@@ -32,7 +33,7 @@ query Me {
   }`;
 
   export const QUERY_USER = gql 
-  `query User($userUsername2: String) {
+  `query user($userUsername2: String) {
     user(username: $userUsername2) {
       username
       animal {
@@ -49,8 +50,8 @@ query Me {
   
 
   export const QUERY_ANIMAL = gql `
-    query animals {
-      animals {
+    query animal($id: ID) {
+      animal(_id: $id) {
         _id
         age
         animaltype
@@ -60,3 +61,17 @@ query Me {
         weight
       }
     }`;
+
+    export const QUERY_ANIMALS = gql`
+  query animals($username: String) {
+    animals(username: $username) {
+      _id
+      petname
+      age
+      breed
+      animaltype
+      weight
+      createdAt
+    }
+  }
+`;

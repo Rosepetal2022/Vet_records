@@ -9,11 +9,11 @@ const typeDefs = gql`
     }
     type Animal {
         _id: ID
-        petname: String!
-        age: String!
-        breed: String!
-        animaltype: String!
-        weight: String!
+        petname: String
+        age: String
+        breed: String
+        animaltype: String
+        weight: String
         createdAt: String
     }
     type Auth {
@@ -23,7 +23,7 @@ const typeDefs = gql`
     type Query {
         me: User
         users: [User]
-        animals: [Animal]
+        animals(username: String): [Animal]
         animal(_id: ID!): Animal
         user(username: String): User
     }
