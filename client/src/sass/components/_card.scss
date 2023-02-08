@@ -1,0 +1,26 @@
+.card {
+    text-align: center;
+    margin: 2rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, .3);
+
+    &__div {
+        margin-top: 2rem;
+        margin-bottom: 30rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &__sub {
+        font-size: 2rem;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+    }
+
+
+}

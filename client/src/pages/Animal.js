@@ -21,8 +21,8 @@ const Animal = () => {
 
 
   return (
-      <main>
-          <div className=''>
+        <div className="animal">
+          <div>
               {loggedIn && (
                   <AddAnimalModal />
               )}
@@ -38,7 +38,7 @@ const Animal = () => {
                />
               )}
           </div>
-      </main>
+          </div>
   );
 };
 

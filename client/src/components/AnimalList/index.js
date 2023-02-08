@@ -20,36 +20,37 @@ const AnimalList = ({ me, title }) => {
 
     return (
         <>
-            <div>
+            <div className="card__div d-flex justify-content-center flex-wrap">
                 {me.map((me) => (
-                    <Card
+                    <Card className="card"
                         key={me._id}
-                        style={{
-                            width: '18rem'
-                        }}
                     >
                         <img
                             alt="Sample"
                             src="https://picsum.photos/300/200"
                         />
-                        <CardBody>
-                            <CardTitle tag="h5">
+                        <CardBody className="card">
+                            <CardTitle className="card__title">
                                 {me.petname}
                             </CardTitle>
-                            <CardSubtitle
-                                className="mb-2 text-muted"
-                                tag="h6"
-                            >
+                            <CardSubtitle className="card__sub">
                                 {me.animaltype}
                             </CardSubtitle>
-                            <CardText>
-                                {me.breed}
-                                {me.weight}
+                            <CardText className="card__text">
+                               
+                                <p className="card__text card__text--1">{me.breed}</p> 
+                                <p className="card__text card_text--2">{me.weight}</p>
+
+                                <Link to={`/SingleAnimal/${me._id}`}>
+            
+                                <Button>Go to Pet Profile</Button>
+                            
+                            </Link>
                             </CardText>
-                            <Button>
-                                Go to Pet Profile
-                            </Button>
-                        </CardBody>
+                           
+                        </CardBody>\
+                       
+                            
                     </Card>
                 ))}
             </div>

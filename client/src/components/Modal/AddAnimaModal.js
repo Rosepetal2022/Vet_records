@@ -61,7 +61,7 @@ function AddAnimalModal(props) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>
+            <Button className="add-pet" onClick={toggle}>
                 Add Pet
             </Button>
             <Modal
