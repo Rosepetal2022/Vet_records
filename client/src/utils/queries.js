@@ -50,7 +50,7 @@ query me {
   
 
   export const QUERY_ANIMAL = gql `
-    query animal($id: ID) {
+    query animal($id: ID!) {
       animal(_id: $id) {
         _id
         age

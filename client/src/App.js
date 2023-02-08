@@ -38,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/Animal" element={<Animal />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/SingleAnimal" element={<SingleAnimal />} />
+          <Route path="/SingleAnimal/:id" element={<SingleAnimal />} />
           <Route path="/" element={<Home />} />
         </Routes>
        <Footer />

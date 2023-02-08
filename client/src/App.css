@@ -90,6 +90,9 @@ body {
 
 .page-button--card {
   color: white;
+  margin-bottom: 2rem;
+  width: 80%;
+  height: 35%;
   background-image: linear-gradient(to right, rgba(117, 154, 171, 0.8), rgba(116, 79, 198, 0.8)); }
 
 .add-pet {
@@ -118,6 +121,8 @@ body {
 .card {
   text-align: center;
   margin: 2rem;
+  border-radius: 20rem;
+  overflow: hidden;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
   .card__div {
     margin-top: 2rem;
@@ -202,3 +207,12 @@ body {
 
 .app-text-sub {
   font-size: 2rem; }
+
+.petname {
+  text-align: center; }
+  .petname__heading {
+    font-size: 8rem;
+    text-transform: uppercase; }
+  .petname__span {
+    font-size: 4rem;
+    margin: 4rem; }

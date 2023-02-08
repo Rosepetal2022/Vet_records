@@ -1,0 +1,13 @@
+.petname {
+    text-align: center;
+
+    &__heading {
+        font-size: 8rem;
+        text-transform: uppercase;
+    }
+
+    &__span {
+        font-size: 4rem;
+        margin: 4rem;
+    }
+}
